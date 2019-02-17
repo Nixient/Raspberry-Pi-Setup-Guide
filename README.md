@@ -107,7 +107,6 @@ sed -i "s/en_US.UTF-8/#en_US.UTF-8/" /etc/locale.conf
 ```bash
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 locale-gen en_US.UTF-8
 ```
 
@@ -137,7 +136,7 @@ timedatectl set-local-rtc 0
 nano /etc/timezone
 ```
 
-* Set to "Europe/Berlin"
+* Set to "America/Chicago"
 
 
 ## 3. Update system and enable NTP
@@ -151,8 +150,8 @@ sed -i 's/#Color/Color/' /etc/pacman.conf # Add color to pacman
 ### 3.2. System update
 
 ```bash
-pacman -Sy pacman
 pacman-key --init
+pacman -Sy pacman
 pacman -S archlinux-keyring
 pacman-key --populate archlinuxarm
 pacman -Syu --ignore filesystem
